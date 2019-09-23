@@ -1,26 +1,44 @@
+// React imports
 import React from 'react';
-import logo from './logo.svg';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+// View imports
+import MainView from './views/MainView';
 
-export default App;
+interface IProps { };
+
+interface IState {
+    title: string,
+    routes: Array<object>
+};
+
+export default class App extends React.Component<IProps, IState> {
+    constructor(props: IProps) {
+        super(props);
+    }
+    
+    state: IState = {
+        title: `Hat-trick`,
+        routes: [
+            { component: MainView, path: `/`, exact: true }
+        ]
+    };
+
+    componentDidMount(): any {
+        document.title = this.state.title;
+    }
+
+    render() {
+        return (
+            <div>
+                <Router>
+                    <Switch>
+                        {this.state.routes.map((route, i) => <Route key={i} {...route}/>)}
+                    </Switch>
+                </Router>
+            </div>
+        );
+    }
+};
+
