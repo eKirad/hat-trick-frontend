@@ -4,7 +4,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 
 // View imports
-import MainView from './views/MainView';
+import HomeView from './views/HomeView';
 
 interface IProps { };
 
@@ -21,7 +21,7 @@ export default class App extends React.Component<IProps, IState> {
     state: IState = {
         title: `Hat-trick`,
         routes: [
-            { component: MainView, path: `/`, exact: true }
+            { component: HomeView, path: `/`, exact: true }
         ]
     };
 
