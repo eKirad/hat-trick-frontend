@@ -6,12 +6,15 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
-interface IProps { }
+interface IProps { 
+
+};
 
 const Page: React.FC<IProps> = (props) => {
     return(
         <section>
             <Header/>
+                {props.children}
             <Footer/>
         </section>
     );

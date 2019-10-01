@@ -1,11 +1,23 @@
 // React imports
 import React from 'react';
 
-interface IProps { };
+// Material UI imports
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+
+
+
+interface IProps { 
+
+};
 
 const Footer: React.FC<IProps> = (props) => {
     return(
-        <p>Hi, I am the footer!</p>
+        <AppBar position="fixed" color="primary">
+            <Toolbar>
+                <p>Footer</p>
+            </Toolbar>
+        </AppBar>
     );
 };
 

@@ -6,7 +6,9 @@ import Home from '../components/Home';
 
 // Service imports
 
-interface IProps { };
+interface IProps {
+    
+};
 
 const HomeView: React.FC<IProps> = (props) => {
     return(

@@ -8,8 +8,11 @@ interface IProps {
 }
 
 const Home: React.FC<IProps> = (props) => {
+
     return(
-        <Page></Page>
+        <Page>
+            <p>Main content</p>
+        </Page>
     );
 }
 
