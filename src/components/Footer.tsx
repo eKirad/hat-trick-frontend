@@ -13,11 +13,9 @@ interface IProps {
 
 const Footer: React.FC<IProps> = (props) => {
     return(
-        <AppBar position="fixed" color="primary">
-            <Toolbar>
-                <p>Footer</p>
-            </Toolbar>
-        </AppBar>
+        <Toolbar>
+            <p>Footer</p>
+        </Toolbar>
     );
 };
 
