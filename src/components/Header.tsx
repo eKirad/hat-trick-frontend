@@ -11,10 +11,14 @@ import IconButton from '@material-ui/core/IconButton';
 
 // Component imports
 
+// Model imports
+import User from '../models/User';
+
 // Service imports
 
+//
 interface IProps {
-
+    user: any
 };
 
 interface IState {
@@ -22,6 +26,20 @@ interface IState {
 }
 
 const Header: React.FC<IProps> = (props) => {
+    let userTypeJSX = ``;
+    console.log(props);
+
+    if (props.user) {
+        if (props.user.role === `admin`) {
+
+        } else {
+
+        }
+    } else {
+
+    }
+
+
     return(
         <div>
             <AppBar position="static">
