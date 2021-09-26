@@ -1,19 +1,19 @@
-import React from 'react';
-
-// Component imports
+import React, { useEffect } from 'react';
+import UserService from '../services/user.service';
 import Page from './Page';
 
-interface IProps {
+const Home: React.FC<{}> = () => {
 
-}
+    useEffect(() => {
+        const fetchUsers = async () => {
+            console.log(`Calling user`)
+            await UserService.fetchUsers();
+        }
 
-const Home: React.FC<IProps> = (props) => {
+        fetchUsers();
+    }, [])
 
-    return(
-        <Page>
-            <p>Main content</p>
-        </Page>
-    );
+    return <Page>{/* TODO: Main conent */}</Page>
 }
 
 export default Home;
