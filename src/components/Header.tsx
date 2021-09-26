@@ -14,13 +14,13 @@ const Header: React.FC<IHeader> = (props) => (
             <Toolbar>
                 <Grid container spacing={1}>
                     <Grid item xs={2} sm={2}>
-                        Logo comes here
+                        {/* TODO: Add logo */}
                     </Grid>
                     <Grid item xs={8} sm={2}>
-                       Search comes here
+                        {/* TODO: Add search */}
                     </Grid>
                     <Grid item xs={2} sm={2}>
-                        User type comes here
+                        {/* TODO: Add user type */}
                     </Grid>
                 </Grid>
                 <Button>Signup</Button>
