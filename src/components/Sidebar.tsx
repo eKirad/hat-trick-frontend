@@ -9,17 +9,20 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
+const drawerWidth = 240;
+
 const Sidebar: React.FC<{}> = (props) => (
     <Drawer
         variant="permanent"
-        // sx={{
-        //     width: drawerWidth,
-        //     flexShrink: 0,
-        //     [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
-        // }}
+        sx={{
+            width: drawerWidth,
+            flexShrink: 0,
+            [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+            }
+        }
     >
         <Toolbar />
-        <Box>
+        <Box sx={{ overflow: 'auto' }}>
             <List>
                 { 
                     ['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (

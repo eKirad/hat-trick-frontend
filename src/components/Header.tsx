@@ -10,7 +10,7 @@ interface IHeader {
 
 const Header: React.FC<IHeader> = () => (
     <div>
-        <AppBar position="fixed">
+        <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
             <Toolbar>
                 <Grid container spacing={1}>
                     <Grid item xs={2} sm={2}>
