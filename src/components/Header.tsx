@@ -8,9 +8,9 @@ interface IHeader {
     user: any
 }
 
-const Header: React.FC<IHeader> = (props) => (
+const Header: React.FC<IHeader> = () => (
     <div>
-        <AppBar position="static">
+        <AppBar position="fixed">
             <Toolbar>
                 <Grid container spacing={1}>
                     <Grid item xs={2} sm={2}>

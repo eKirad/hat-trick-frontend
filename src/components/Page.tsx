@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import UserService from '../services/UserService';
+import Sidebar from './Sidebar';
 
 const Page: React.FC<{}> = (props) => {
     const currentUser = UserService.isAuthenticated() ? UserService.getCurrentUser() : { };
@@ -13,6 +14,7 @@ const Page: React.FC<{}> = (props) => {
             <Header
                 user ={user}    
             />
+                <Sidebar/>
                 {props.children}
             <Footer/>
         </section>
