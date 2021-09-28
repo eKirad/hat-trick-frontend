@@ -18,8 +18,6 @@ const Home: React.FC<{}> = () => {
         fetchUsers();
     }, [])
 
-// <UserCard user={user}/>
-
     const getUserCards = (users: any[]) => (
         users.map((user: any) => (
                 <Grid item  xs={3}>
@@ -27,7 +25,6 @@ const Home: React.FC<{}> = () => {
                 </Grid>
         ))
     )
-
 
     return (
         <Page>
