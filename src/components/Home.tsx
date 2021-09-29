@@ -1,3 +1,4 @@
+import { Box, Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import UserService from '../services/user.service';
 import Page from './Page';
@@ -17,9 +18,21 @@ const Home: React.FC<{}> = () => {
         fetchUsers();
     }, [])
 
+    const getUserCards = (users: any[]) => (
+        users.map((user: any) => (
+                <Grid item  xs={3}>
+                    <UserCard user={user}/>
+                </Grid>
+        ))
+    )
+
     return (
         <Page>
-            { users && users.map((user: any) => (<UserCard user={user}/>))}
+            <Box sx={{ flexGrow: 1 }}>
+                {
+                    users && ( <Grid container spacing={2}> {getUserCards(users)} </Grid>)
+                }
+            </Box>
         </Page>
     )
 }

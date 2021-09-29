@@ -1,25 +1,28 @@
 import React from 'react';
-import Drawer from '@material-ui/core/Drawer';
-import Toolbar from '@material-ui/core/Toolbar';
-import Box from '@material-ui/core/Box';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import Drawer from '@mui/material/Drawer';
+import Toolbar from '@mui/material/Toolbar';
+import Box from '@mui/material/Box';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
+
+const drawerWidth = 180;
 
 const Sidebar: React.FC<{}> = (props) => (
     <Drawer
         variant="permanent"
-        // sx={{
-        //     width: drawerWidth,
-        //     flexShrink: 0,
-        //     [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
-        // }}
+        sx={{
+            width: drawerWidth,
+            flexShrink: 0,
+            [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+            }
+        }
     >
         <Toolbar />
-        <Box>
+        <Box sx={{ overflow: 'auto' }}>
             <List>
                 { 
                     ['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (

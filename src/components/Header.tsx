@@ -1,32 +1,31 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
+import { AppBar, Toolbar, Box, IconButton, Badge } from '@mui/material';
+import {AccountCircle, Mail as MailIcon, Notifications as NotificationsIcon } from '@mui/icons-material';
 
-interface IHeader {
-    user: any
-}
+const Header: React.FC<{}> = () => (
+  <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
+    <Toolbar>
+      <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+          <Badge badgeContent={4} color="error">
+            <MailIcon />
+          </Badge>
+        </IconButton>
+        <IconButton size="large" aria-label="show 17 new notifications" color="inherit">
+          <Badge badgeContent={17} color="error">
+            <NotificationsIcon />
+          </Badge>
+        </IconButton>
+        <IconButton size="large" edge="end" aria-label="account of current user" 
+          // aria-controls={menuId}
+          aria-haspopup="true" 
+          // onClick={handleProfileMenuOpen} 
+          color="inherit">
+          <AccountCircle />
+        </IconButton>
+      </Box>
+    </Toolbar>
+  </AppBar>
+  );
 
-const Header: React.FC<IHeader> = () => (
-    <div>
-        <AppBar position="fixed">
-            <Toolbar>
-                <Grid container spacing={1}>
-                    <Grid item xs={2} sm={2}>
-                        {/* TODO: Add logo */}
-                    </Grid>
-                    <Grid item xs={8} sm={2}>
-                        {/* TODO: Add search */}
-                    </Grid>
-                    <Grid item xs={2} sm={2}>
-                        {/* TODO: Add user type */}
-                    </Grid>
-                </Grid>
-                <Button>Signup</Button>
-            </Toolbar>
-        </AppBar>
-    </div>
-);
-
-export default Header;
+  export default Header;

@@ -1,6 +1,14 @@
 import React from 'react';
-import Toolbar from '@material-ui/core/Toolbar';
+import { Toolbar, Grid, AppBar } from '@mui/material';
 
-const Footer: React.FC<{}> = () => (<Toolbar>{/* TODO: Footer */}</Toolbar>);
+const Footer: React.FC<{}> = () => (
+    <div>
+        <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
+            <Toolbar>
+                <Grid container spacing={1}/>
+            </Toolbar>
+    </AppBar>
+</div>
+);
 
 export default Footer;
