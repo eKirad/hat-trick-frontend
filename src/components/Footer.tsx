@@ -5,8 +5,7 @@ const Footer: React.FC<{}> = () => (
     <div>
         <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
             <Toolbar>
-                <Grid container spacing={1}>
-                </Grid>
+                <Grid container spacing={1}/>
             </Toolbar>
     </AppBar>
 </div>
